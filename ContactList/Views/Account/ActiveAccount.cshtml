@@ -1,0 +1,18 @@
+﻿@model bool
+@{
+    ViewData["Title"] = "ActiveAccount";
+}
+
+@if(Model)
+{
+    <h1 class="alert alertalert-success">
+        حساب شما فعال شد
+    </h1>
+}
+else
+{
+    <h1 class="alert alert-danger">
+        حساب شما فعال نشد
+    </h1>
+}
+

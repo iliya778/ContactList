@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ContactList.Core.Domain.User>
+
+@{
+    ViewData["Title"] = "list";
+}
+
+<a asp-controller="account" asp-action="register"> رجیستر در سایت </a>
+<br></br>
+<a asp-controller="account"  asp-action="Login"> لاگین در سایت </a>
+<br></br>
+<a asp-area="Admin" asp-controller="home"> پنل ادمین برای عملیات حذف , اضافه , خواندن , ادیت دیتا بیس </a>
+<br></br>
+برای پنل ادمین باید از دیتابیس قابلیت (isAdmin) را True کنید
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
